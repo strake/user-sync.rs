@@ -1,0 +1,9 @@
+[package]
+name = "user-sync"
+version = "0.1.0"
+authors = ["M Farkas-Dyck <strake888@gmail.com>"]
+description = "user-space synchronization"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+syscall = "0.2.*"

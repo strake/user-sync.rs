@@ -2,6 +2,7 @@ use core::cell::UnsafeCell;
 use core::ops::{Deref, DerefMut};
 
 /// Mutual exclusionary primitive
+#[derive(Debug)]
 pub struct Mutex<T: ?Sized> {
     lock: ::system::Mutex,
     valu: UnsafeCell<T>,
@@ -44,6 +45,7 @@ impl<T: ?Sized> Mutex<T> {
 }
 
 /// Exclusive reference to `Mutex`-guarded value
+#[derive(Debug)]
 pub struct Guard<'a, T: ?Sized + 'a> {
     lock: &'a ::system::Mutex,
     valu: &'a mut T,
@@ -97,6 +99,7 @@ impl<'a, T: ?Sized> Drop for Guard<'a, T> {
 ///     }
 /// }
 /// ```
+#[derive(Debug)]
 pub struct CondVar(::system::CondVar);
 
 impl CondVar {

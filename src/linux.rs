@@ -5,6 +5,7 @@ use core::sync::atomic::{AtomicPtr, AtomicU32, AtomicUsize, Ordering as Memord,
 // 0: unlocked
 // 1: locked
 // 2: locked and contended
+#[derive(Debug)]
 pub struct Mutex(AtomicU32);
 
 impl Mutex {
@@ -41,6 +42,7 @@ impl Mutex {
     }
 }
 
+#[derive(Debug)]
 pub struct Barrier {
     n_waiting: AtomicUsize,
     n_total: usize,
@@ -77,6 +79,7 @@ impl Barrier {
     }
 }
 
+#[derive(Debug)]
 pub struct CondVar {
     ptr: AtomicPtr<AtomicU32>,
     seq: AtomicU32,

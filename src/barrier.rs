@@ -1,4 +1,5 @@
 /// Thread barrier
+#[derive(Debug)]
 pub struct Barrier(::system::Barrier);
 
 impl Barrier {

@@ -6,4 +6,4 @@ description = "user-space synchronization"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-syscall = "0.2.*"
+system-call = "0.1"

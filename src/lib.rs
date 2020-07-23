@@ -3,6 +3,8 @@
 
 #![no_std]
 
+#![deny(missing_debug_implementations)]
+
 #[macro_use] extern crate syscall;
 
 #[cfg(target_os = "linux")] mod linux;
